@@ -1,0 +1,21 @@
+(defun F1-F20 ()
+  (let ((res-list '(1.0))
+        (f-prev 1))
+    (do ((i 2 (incf i)))
+        ((> i 20) (nreverse res-list))
+      (cond
+        ((< i 11) (setf f-prev (+ (log f-prev) (/ i 2.0))))
+        ((= i 11) (setf f-prev 1))
+        (t (setf f-prev (* 2 (cos (+ f-prev (sin (* 2 i))))))))
+        (push f-prev res-list))))
+
+(defun print (inp-list)
+  (let ((length-list (length inp-list)))
+    (format t "   F(i)       Result~%")
+    (format t "-------------------------~%")
+    (do ((i 1 (incf i)))
+        ((> i 20) t)
+      ()))
+
+(defun RGR ()
+      )
